@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/ranking_back_new2"
+    android:orientation="vertical"
+    tools:context=".SearchPrac">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/ranking_back"
+            android:background="@drawable/before_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+        </View>
+
+        <android.support.v7.widget.SearchView
+
+            android:id="@+id/searchView"
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:layout_gravity="right"
+            android:queryHint="Player Name">
+
+        </android.support.v7.widget.SearchView>
+
+    </LinearLayout>
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="45dp">
+
+       <Button
+           android:id="@+id/ScoreOrderButton"
+           android:background="@drawable/ranking_score"
+           android:layout_width="100dp"
+           android:layout_height="45dp"
+           android:layout_marginLeft="20dp"
+           />
+       <Button
+           android:id="@+id/ReboundOrderButton"
+           android:background="@drawable/ranking_rebound"
+           android:layout_width="100dp"
+           android:layout_marginLeft="40dp"
+           android:layout_height="45dp"/>
+       <Button
+           android:id="@+id/AssistOrderButton"
+           android:background="@drawable/ranking_assist"
+           android:layout_marginLeft="40dp"
+           android:layout_width="100dp"
+           android:layout_height="45dp"/>
+   </LinearLayout>
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        >
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

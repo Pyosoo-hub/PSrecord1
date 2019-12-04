@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "114720285054",
+    "firebase_url": "https://psrecords-461ae.firebaseio.com",
+    "project_id": "psrecords-461ae",
+    "storage_bucket": "psrecords-461ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:114720285054:android:906a80d9458552e8",
+        "android_client_info": {
+          "package_name": "com.example.snstk.psrecord"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "114720285054-8luel34seenme4vir9vteu05tailc53q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.snstk.psrecord",
+            "certificate_hash": "300f6d1781b7873d15be4dbbcf062efd19d0095b"
+          }
+        },
+        {
+          "client_id": "114720285054-3djmlm3nahrmqu1o87ni6bbg827e48lu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9nc_mlcp5a5yyFv3rtTJZ79Xka7U6m1g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "114720285054-3djmlm3nahrmqu1o87ni6bbg827e48lu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

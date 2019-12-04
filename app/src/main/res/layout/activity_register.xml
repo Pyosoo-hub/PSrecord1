@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/register_back"
+    tools:context=".RegisterActivity">
+
+
+    <TextView
+        android:id="@+id/IDtextView"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:layout_marginTop="350dp"
+        android:layout_centerHorizontal="true"
+        android:text="ID(Google E-mail)"
+        />
+
+    <EditText
+        android:id="@+id/IDeditText"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        android:hint="input Your email"
+        android:layout_below="@+id/IDtextView"
+        android:gravity="center"
+        android:inputType="text"/>
+
+    <TextView
+        android:id="@+id/PWtextView"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/IDeditText"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:text="PassWord"
+        />
+    <EditText
+        android:id="@+id/PWeditText"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/PWtextView"
+        android:hint="Input new PassWord"
+        android:inputType="textPassword"
+        />
+
+
+    <Button
+        android:id="@+id/loginCheck"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/PWeditText"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/signup"
+        />
+
+    <Button
+        android:id="@+id/RegisterCancel"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/PWeditText"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="2dp"
+
+        android:background="@drawable/cancel"
+        />
+</RelativeLayout>

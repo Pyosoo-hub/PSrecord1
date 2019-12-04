@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TeamRegister">
+
+    <ImageView
+        android:id="@+id/TeamPicture"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/back"
+        android:layout_centerInParent="true"
+        />
+    <Button
+        android:id="@+id/PictureButton"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/TeamPicture"
+        android:layout_centerInParent="true"
+        android:text="photo upload"
+        android:background="@drawable/redbackground"/>
+
+    <EditText
+        android:id="@+id/TeamNameET"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:background="@drawable/player_line_background2"
+        android:layout_centerInParent="true"
+        android:hint="선수명"
+        android:gravity="center"
+        />
+    <EditText
+        android:id="@+id/TeamLeaderET"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:background="@drawable/player_line_background1"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/TeamNameET"
+        android:hint="팀 주장"
+        />
+    <EditText
+        android:id="@+id/TeamInfoET"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#000000"
+        android:layout_below="@+id/TeamLeaderET"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:hint="팀 설명"/>
+
+    <Button
+        android:id="@+id/TeamRegisterBT"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/TeamInfoET"
+        android:gravity="center"
+        android:text="register"
+        android:background="@drawable/redbackground"/>
+
+
+
+</RelativeLayout>

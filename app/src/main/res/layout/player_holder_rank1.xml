@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    app:cardElevation="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:background="@"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/match_info"
+            android:background="@drawable/ranking_top"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="sample_match_info"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/n"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:background="@drawable/record_line1"
+            android:hint="name"
+            android:gravity="center"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/s"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:background="@drawable/record_line2"
+            android:hint="score"
+            android:gravity="center"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/a"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:background="@drawable/record_line1"
+            android:hint="assist"
+            android:gravity="center"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:background="@drawable/record_line2"
+            android:hint="rebound"
+            android:gravity="center"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/f"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:background="@drawable/record_line1"
+            android:hint="foul"
+            android:gravity="center"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+        <!--
+        <TextView
+            android:id="@+id/t"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="time"
+            android:textStyle="bold"
+            android:textSize="15sp"/>
+            -->
+        <TextView
+            android:id="@+id/g"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:background="@drawable/record_line2"
+            android:hint="gamecount"
+            android:gravity="center"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/rank1_text"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:text="1등!!!!"/>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000"/>
+</android.support.v7.widget.CardView>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/choice_back"
+    tools:context=".ChoiceActivity">
+
+    <Button
+        android:id="@+id/choice_before_button"
+        android:background="@drawable/before_button"
+        android:layout_width="30dp"
+        android:layout_height="30dp" />
+    <TextView
+        android:id="@+id/choice1"
+        android:layout_width="320dp"
+        android:layout_height="130dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="190dp"
+        android:background="@drawable/choice_record"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/choice2"
+        android:layout_width="320dp"
+        android:layout_height="130dp"
+        android:layout_below="@+id/choice1"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/choice_search"
+        android:gravity="center" />
+<!--
+    <TextView
+        android:id="@+id/choice3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/choice2"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="3dp"
+        android:layout_toEndOf="@+id/logout"
+        android:background="@drawable/realblue"
+        android:gravity="center"
+        android:text="팀 등록하기" />
+-->
+    <TextView
+        android:id="@+id/choice3"
+        android:layout_width="320dp"
+        android:layout_height="130dp"
+        android:background="@drawable/choice_ranking"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/choice2"
+        android:layout_marginTop="20dp"
+        />
+   <Button
+       android:id="@+id/logout"
+       android:layout_width="70dp"
+       android:layout_height="20dp"
+       android:layout_marginTop="3dp"
+       android:background="@drawable/choice_logout"
+       android:layout_alignParentRight="true"/>
+</RelativeLayout>

@@ -1,0 +1,1014 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/back"
+    >
+
+    <EditText
+        android:id="@+id/home_name"
+        android:gravity="center"
+        android:layout_width="164dp"
+        android:layout_height="45dp"
+        android:layout_alignStart="@+id/home_score"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:text="Home"
+        android:inputType="text"
+        />
+
+    <EditText
+        android:id="@+id/away_name"
+        android:layout_width="164dp"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:text="Away"
+        android:gravity="center"
+        android:inputType="text"/>
+
+    <TextView
+        android:id="@+id/Quarter_Text"
+        android:background="@drawable/border"
+        android:layout_width="70dp"
+        android:layout_height="29dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="Quarter" />
+
+    <TextView
+        android:id="@+id/home_score"
+        android:layout_width="130dp"
+        android:layout_height="65dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/back2"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="#FF0000"
+        android:textSize="30dp"
+        android:fontFamily="cursive"
+        />
+
+    <TextView
+        android:id="@+id/away_score"
+        android:background="@drawable/back2"
+        android:textColor="#ff0000"
+        android:layout_width="130dp"
+        android:layout_height="65dp"
+        android:layout_alignTop="@+id/home_score"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:text="0"
+        android:fontFamily="cursive"
+        android:textSize="30dp" />
+
+    <Button
+        android:background="@drawable/makebutton2"
+        android:id="@+id/home_up"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/home_score"
+        android:text="↑"
+        android:textSize="28dp"/>
+
+    <Button
+        android:background="@drawable/makebutton"
+        android:id="@+id/home_down"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_toRightOf="@+id/home_up"
+        android:layout_below="@+id/home_score"
+        android:text="↓"
+        android:textSize="28dp" />
+
+    <Button
+        android:id="@+id/away_up"
+        android:background="@drawable/makebutton"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/away_score"
+        android:layout_toLeftOf="@+id/away_down"
+        android:text="↑"
+        android:textSize="28dp"/>
+
+    <Button
+        android:background="@drawable/makebutton"
+        android:id="@+id/away_down"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/away_score"
+        android:layout_alignParentRight="true"
+        android:text="↓"
+        android:textSize="28dp"/>
+
+    <TextView
+        android:id="@+id/quarter"
+        android:layout_width="37dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/Quarter_Text"
+        android:gravity="center"
+        android:text="0" />
+
+
+    <TextView
+        android:background="@drawable/border"
+        android:id="@+id/teamfoul1"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="51dp"
+        android:layout_toRightOf="@+id/home_score"
+        android:gravity="center"
+        android:text="TF"
+        />
+
+    <TextView
+        android:id="@+id/teamfoul2"
+        android:background="@drawable/border"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="51dp"
+        android:layout_toLeftOf="@+id/away_score"
+        android:gravity="center"
+        android:text="TF" />
+
+    <TextView
+        android:id="@+id/home_team_foul"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:layout_below="@+id/teamfoul1"
+        android:layout_toRightOf="@+id/home_score"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/away_team_foul"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/teamfoul2"
+        android:layout_toLeftOf="@+id/away_score"
+        android:gravity="center"
+        android:text="0" />
+
+
+    <Button
+        android:id="@+id/reset"
+        android:background="@drawable/makebutton2"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_toLeftOf="@id/upload"
+        android:layout_alignParentBottom="true"
+        android:text="Reset"
+        android:textSize="8sp"
+        android:layout_centerInParent="true"
+        />
+
+    <!-- 여기까지가 점수판 기본셋팅 -->
+    <!-- 선수번호,득점... 도메인 정의 -->
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:background="@drawable/back"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/home_up"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/playername"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_above="@+id/home_player1"
+            android:gravity="center"
+            android:text="선수이름"
+            android:textSize="11dp" />
+
+        <TextView
+            android:id="@+id/playerscore"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text="득 점"
+            android:textSize="8dp" />
+
+        <TextView
+            android:id="@+id/playerrebound"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text="리바운드"
+            android:textSize="8dp" />
+
+        <TextView
+            android:id="@+id/playerassist"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text="어시스트"
+            android:textSize="8dp" />
+
+        <TextView
+            android:id="@+id/playerfoul"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text="파 울"
+            android:textSize="8dp" />
+
+        <TextView
+            android:id="@+id/playeredit"
+            android:layout_width="34dp"
+            android:layout_height="30dp"
+            android:text="편집"
+            android:textSize="8dp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/playtime"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="출전 시간"
+            android:gravity="center"
+            android:textSize="8dp"
+            />
+    </LinearLayout>
+    <!-- 선수 도메인 정의 끝====================================-->
+    <!-- 선수 관련 스코어 표시 ================================-->
+    <LinearLayout
+        android:id="@+id/layout2"
+        android:background="@drawable/back"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@+id/layout1"
+        android:layout_alignParentStart="true">
+
+        <EditText
+            android:id="@+id/home_player1"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="123dp"
+            android:gravity="center"
+            android:text="player1"
+            android:textSize="9dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/player1_score"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player1_rebound"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player1_assist"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player1_foul"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/home_player1_edit"
+            android:background="@drawable/editbackground"
+            android:layout_width="34dp"
+            android:layout_height="33dp"
+            android:layout_alignStart="@+id/Quarter_Text"
+            android:layout_alignTop="@+id/player1_foul"
+            android:layout_marginTop="-1dp"
+            android:text="Edit"
+            android:textSize="4dp" />
+
+        <TextView
+            android:id="@+id/player1_playtime"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="00:00"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout3"
+        android:background="@drawable/back"
+
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@+id/layout2"
+        android:layout_alignParentStart="true">
+
+        <EditText
+            android:id="@+id/home_player2"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="123dp"
+            android:gravity="center"
+            android:text="player2"
+            android:textSize="9dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/player2_score"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player2_rebound"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player2_assist"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player2_foul"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/home_player2_edit"
+            android:background="@drawable/editbackground"
+            android:layout_width="34dp"
+            android:layout_height="33dp"
+            android:layout_alignStart="@+id/Quarter_Text"
+            android:layout_alignTop="@+id/player1_foul"
+            android:layout_marginTop="-1dp"
+            android:text="Edit"
+            android:textSize="4dp" />
+        <TextView
+            android:id="@+id/player2_playtime"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="00:00"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout4"
+        android:background="@drawable/back"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@+id/layout3"
+        >
+        <EditText
+            android:id="@+id/home_player3"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="123dp"
+            android:gravity="center"
+            android:text="player3"
+            android:textSize="9dp"
+            android:inputType="text"/>
+        <TextView
+            android:id="@+id/player3_score"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+        <TextView
+            android:id="@+id/player3_rebound"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player3_assist"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player3_foul"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/home_player3_edit"
+            android:background="@drawable/editbackground"
+            android:layout_width="34dp"
+            android:layout_height="33dp"
+            android:layout_alignStart="@+id/Quarter_Text"
+            android:layout_alignTop="@+id/player1_foul"
+            android:layout_marginTop="-1dp"
+            android:text="Edit"
+            android:textSize="4dp" />
+
+        <TextView
+            android:id="@+id/player3_playtime"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="00:00"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layout5"
+        android:background="@drawable/back"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@+id/layout4">
+
+        <EditText
+            android:id="@+id/home_player4"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="123dp"
+            android:gravity="center"
+            android:text="player4"
+            android:textSize="9dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/player4_score"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player4_rebound"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player4_assist"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player4_foul"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/home_player4_edit"
+            android:background="@drawable/editbackground"
+            android:layout_width="34dp"
+            android:layout_height="33dp"
+            android:layout_alignStart="@+id/Quarter_Text"
+            android:layout_alignTop="@+id/player1_foul"
+            android:layout_marginTop="-1dp"
+            android:text="Edit"
+            android:textSize="4dp" />
+
+        <TextView
+            android:id="@+id/player4_playtime"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="00:00"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+    <!-- new -->
+
+    <LinearLayout
+        android:id="@+id/layout6"
+        android:background="@drawable/back"
+
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@+id/layout5">
+
+        <EditText
+            android:id="@+id/home_player5"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="123dp"
+            android:gravity="center"
+            android:text="player5"
+            android:textSize="9dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/player5_score"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player5_rebound"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player5_assist"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player5_foul"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/home_player5_edit"
+            android:background="@drawable/editbackground"
+            android:layout_width="34dp"
+            android:layout_height="33dp"
+            android:layout_alignStart="@+id/Quarter_Text"
+            android:layout_alignTop="@+id/player1_foul"
+            android:layout_marginTop="-1dp"
+            android:text="Edit"
+            android:textSize="4dp" />
+
+        <TextView
+            android:id="@+id/player5_playtime"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="00:00"
+            android:gravity="center"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout7"
+        android:background="@drawable/back"
+
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/layout6"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="3dp">
+
+        <EditText
+            android:id="@+id/home_player6"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="123dp"
+            android:gravity="center"
+            android:text="player6"
+            android:textSize="9dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/player6_score"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player6_rebound"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player6_assist"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player6_foul"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/home_player6_edit"
+            android:background="@drawable/editbackground"
+            android:layout_width="34dp"
+            android:layout_height="33dp"
+            android:layout_alignStart="@+id/Quarter_Text"
+            android:layout_alignTop="@+id/player1_foul"
+            android:layout_marginTop="-1dp"
+            android:text="Edit"
+            android:textSize="4dp" />
+
+        <TextView
+            android:id="@+id/player6_playtime"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="00:00"
+            android:gravity="center"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout8"
+        android:background="@drawable/back"
+
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@+id/layout7">
+
+        <EditText
+            android:id="@+id/home_player7"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="123dp"
+            android:gravity="center"
+            android:text="player7"
+            android:textSize="9dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/player7_score"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player7_rebound"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player7_assist"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player7_foul"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/home_player7_edit"
+            android:background="@drawable/editbackground"
+            android:layout_width="34dp"
+            android:layout_height="33dp"
+            android:layout_alignStart="@+id/Quarter_Text"
+            android:layout_alignTop="@+id/player1_foul"
+            android:layout_marginTop="-1dp"
+            android:text="Edit"
+            android:textSize="4dp" />
+
+        <TextView
+            android:id="@+id/player7_playtime"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="00:00"
+            android:gravity="center"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout9"
+        android:background="@drawable/back"
+
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@+id/layout8">
+
+        <EditText
+            android:id="@+id/home_player8"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="123dp"
+            android:gravity="center"
+            android:text="player8"
+            android:textSize="9dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/player8_score"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player8_rebound"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player8_assist"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player8_foul"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/home_player8_edit"
+            android:layout_width="34dp"
+            android:layout_height="33dp"
+            android:layout_alignStart="@+id/Quarter_Text"
+            android:layout_alignTop="@+id/player1_foul"
+            android:layout_marginTop="-1dp"
+            android:background="@drawable/editbackground"
+            android:text="Edit"
+            android:textSize="4dp" />
+
+        <TextView
+            android:id="@+id/player8_playtime"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="00:00"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout10"
+        android:background="@drawable/back"
+
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@+id/layout9">
+
+        <EditText
+            android:id="@+id/home_player9"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="123dp"
+            android:gravity="center"
+            android:text="player9"
+            android:textSize="9dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/player9_score"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player9_rebound"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player9_assist"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player9_foul"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/home_player9_edit"
+            android:background="@drawable/editbackground"
+            android:layout_width="35dp"
+            android:layout_height="33dp"
+            android:layout_alignStart="@+id/Quarter_Text"
+            android:layout_alignTop="@+id/player1_foul"
+            android:layout_marginTop="-1dp"
+            android:text="Edit"
+            android:textSize="4dp" />
+
+        <TextView
+            android:id="@+id/player9_playtime"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="00:00"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout11"
+        android:background="@drawable/back"
+
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@+id/layout10">
+
+        <EditText
+            android:id="@+id/home_player10"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="123dp"
+            android:gravity="center"
+            android:text="player10"
+            android:textSize="9dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/player10_score"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player10_rebound"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player10_assist"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player10_foul"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/home_player10_edit"
+            android:background="@drawable/editbackground"
+            android:layout_width="35dp"
+            android:layout_height="33dp"
+            android:layout_alignStart="@+id/Quarter_Text"
+            android:layout_alignTop="@+id/player1_foul"
+            android:layout_marginTop="-1dp"
+            android:text="Edit"
+            android:textSize="4dp" />
+
+        <TextView
+            android:id="@+id/player10_playtime"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="00:00"
+            android:gravity="center"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layout12"
+        android:background="@drawable/back"
+
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@+id/layout11">
+
+        <EditText
+            android:id="@+id/home_player11"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="123dp"
+            android:gravity="center"
+            android:text="player11"
+            android:textSize="9dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/player11_score"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player11_rebound"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player11_assist"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/player11_foul"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/home_player11_edit"
+            android:background="@drawable/editbackground"
+            android:layout_width="35dp"
+            android:layout_height="33dp"
+            android:layout_alignStart="@+id/Quarter_Text"
+            android:layout_alignTop="@+id/player1_foul"
+            android:layout_marginTop="-1dp"
+            android:text="Edit"
+            android:textSize="4dp" />
+        <TextView
+            android:id="@+id/player11_playtime"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="00:00"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+    <!-- -->
+</RelativeLayout>
